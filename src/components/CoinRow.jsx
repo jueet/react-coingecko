@@ -15,9 +15,9 @@ export default function CoinRow({ coin, index }) {
         <span>{coin.name}</span>
         <span className="ms-2 text-muted text-uppercase">{coin.symbol}</span>
       </td>
-      <td>{coin.current_price}</td>
-      <td className={color}>{coin.price_change_24h}</td>
-      <td>{coin.total_volume}</td>
+      <td className="text-end">{coin.current_price}</td>
+      <td className={color + " text-end"}>{coin.price_change_24h}</td>
+      <td className="text-end">{coin.total_volume}</td>
     </tr>
   );
 }
