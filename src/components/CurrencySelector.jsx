@@ -1,14 +1,14 @@
-export default function CurrencySelector({ defaultValue, onChange, options }) {
+export default function CurrencySelector({ selectedValue, onChange, options }) {
   const handleChange = (e) => onChange(e.target.value);
   return (
     <select
       className="form-select"
-      value={defaultValue}
+      value={selectedValue}
       onChange={handleChange}
     >
-      {options.map((option, index) => (
-        <option key={index} value={option}>
-          {option}
+      {options.map((currencie_iso, index) => (
+        <option key={index} value={currencie_iso}>
+          {currencie_iso}
         </option>
       ))}
     </select>

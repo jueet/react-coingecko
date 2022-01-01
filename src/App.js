@@ -42,7 +42,7 @@ function App() {
           </div>
           <div className="col-md-4">
             <CurrencySelector
-              defaultValue={selectedOption}
+              selectedValue={selectedOption}
               onChange={setSelectedOption}
               options={currencies}
             />
