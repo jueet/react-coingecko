@@ -6,7 +6,7 @@ import CurrencySelector from "./components/CurrencySelector";
 import { Spinner } from "./components/Spinner";
 
 function App() {
-  const currencies = ["USD", "MXN", "JPY", "KRW"];
+  const currencies = ["USD", "EUR"];
 
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
