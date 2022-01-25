@@ -9,7 +9,7 @@ export default function TableCoins({ coins, search, currency }) {
 
   let filteredCoins = coins.filter((coin) => {
     return (
-      coin.name.toLowerCase().includes(searchedCoin) |
+      coin.name.toLowerCase().includes(searchedCoin) ||
       coin.symbol.includes(searchedCoin)
     );
   });
