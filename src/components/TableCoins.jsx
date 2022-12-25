@@ -2,7 +2,14 @@ import React from "react";
 import { formatCurrency } from "../utils/FormatCurrency";
 import CoinRow from "./CoinRow";
 
-const titles = ["#", "Coin", "Price", "Price Change", "24h Volume"];
+const titles = [
+  "#",
+  "Coin",
+  "Price",
+  "Price Change",
+  "24h Volume",
+  "Market Cap",
+];
 
 export default function TableCoins({ coins, search, currency }) {
   let searchedCoin = search.toLowerCase();
@@ -18,6 +25,8 @@ export default function TableCoins({ coins, search, currency }) {
     return {
       ...coin,
       current_price: formatCurrency(coin.current_price, currency),
+      total_volume: formatCurrency(coin.total_volume, currency),
+      market_cap: formatCurrency(coin.market_cap, currency),
     };
   });
 

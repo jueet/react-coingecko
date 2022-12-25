@@ -20,6 +20,7 @@ export default function CoinRow({ coin, index }) {
       <td className="text-end">{coin.current_price}</td>
       <td className={color + " text-end"}>{coin.price_change_24h}</td>
       <td className="text-end">{coin.total_volume}</td>
+      <td className="text-end">{coin.market_cap}</td>
     </tr>
   );
 }
