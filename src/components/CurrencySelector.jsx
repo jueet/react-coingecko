@@ -6,9 +6,9 @@ export default function CurrencySelector({ selectedValue, onChange, options }) {
       value={selectedValue}
       onChange={handleChange}
     >
-      {options.map((currencie_iso, index) => (
-        <option key={index} value={currencie_iso}>
-          {currencie_iso}
+      {options.map((currency_iso, index) => (
+        <option key={index} value={currency_iso}>
+          {currency_iso}
         </option>
       ))}
     </select>

@@ -10,21 +10,21 @@ function App() {
 
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
-  const [selectedOption, setSelectedOption] = useState(currencies[0]);
+  const [currency, setCurrency] = useState(currencies[0]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
     const getData = async () => {
       let res = await axios.get(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${selectedOption.toLowerCase()}&order=market_cap_desc&per_page=25&page=1`
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.toLowerCase()}&order=market_cap_desc&per_page=25&page=1`
       );
       setCoins(res.data);
       setIsLoading(false);
     };
 
     getData();
-  }, [selectedOption]);
+  }, [currency]);
 
   return (
     <div className="container mt-4">
@@ -42,8 +42,8 @@ function App() {
           </div>
           <div className="col-md-4">
             <CurrencySelector
-              selectedValue={selectedOption}
-              onChange={setSelectedOption}
+              selectedValue={currency}
+              onChange={setCurrency}
               options={currencies}
             />
           </div>
@@ -52,11 +52,7 @@ function App() {
           {isLoading ? (
             <Spinner />
           ) : (
-            <TableCoins
-              coins={coins}
-              currency={selectedOption}
-              search={search}
-            />
+            <TableCoins coins={coins} currency={currency} search={search} />
           )}
         </div>
       </div>
