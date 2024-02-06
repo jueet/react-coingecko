@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     setIsLoading(true);
     const getData = async () => {
-      let res = await axios.get(
+      const res = await axios.get(
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.toLowerCase()}&order=market_cap_desc&per_page=25&page=1`
       );
       setCoins(res.data);
