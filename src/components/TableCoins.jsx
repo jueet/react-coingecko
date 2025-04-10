@@ -31,7 +31,7 @@ export default function TableCoins({ coins, search, currency }) {
       <thead>
         <tr>
           {titles.map((title, index) => (
-            <th scope="col" className="text-center" key={index}>
+            <th scope="col" className="text-center" key={index} width="{100 / titles.length}">
               {title}
             </th>
           ))}
